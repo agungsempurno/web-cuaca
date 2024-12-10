@@ -58,7 +58,23 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-10 hero-content">
-            <h1 class="hero-title">Check Weather Anywhere</h1>
+            <div class="hero-title">
+              <h1
+                class="fw-bold"
+                style="margin-bottom: 50px; text-align: center"
+              >
+                Check Weather
+                <span
+                  class="typer"
+                  id="some-id"
+                  data-words="Anywhere,Anytimes,Quickly"
+                  data-colors="#FFFF00"
+                  data-delay="50"
+                  data-loop="true"
+                >
+                </span>
+              </h1>
+            </div>
             <p class="hero-subtitle">
               Get real-time weather updates for any location with our accurate
               weather forecasting service
@@ -252,9 +268,9 @@
           <div class="col-md-6 mb-4">
             <div class="about-image">
               <img
-                src="/api/placeholder/600/400"
+                src="assets/logo.png"
                 alt="Tim InfoCuaca"
-                class="img-fluid"
+                class="img-fluid rounded-circle"
               />
             </div>
           </div>
@@ -326,7 +342,7 @@
                 <i class="fas fa-phone-alt"></i>
               </div>
               <h4>Telepon</h4>
-              <p>+62 821-2345-6789<br />+62 21 987-6543</p>
+              <p>+62 811-1111-1111<br />+62 82 222-2222</p>
             </div>
             <div class="contact-info-card">
               <div class="contact-icon">
@@ -405,7 +421,7 @@
             <h4 class="footer-title">Contact</h4>
             <ul class="footer-links">
               <li>Email: info@infocuaca.com</li>
-              <li>Phone: +62 123 456 789</li>
+              <li>Phone: +62 111 111 111</li>
               <li>Address: Jakarta, Indonesia</li>
             </ul>
           </div>
@@ -427,6 +443,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+
     <script>
       let map;
       let marker;
