@@ -425,3 +425,23 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
+
+.about-text-expandable {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  position: relative;
+}
+.about-text-expandable.expanded {
+  max-height: 1000px; /* Adjust as needed */
+}
+.read-more-btn {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+
+  display: inline-block;
+}
+.read-more-btn:hover {
+  color: #0056b3;
+}

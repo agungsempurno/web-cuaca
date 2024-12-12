@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body
@@ -143,7 +147,10 @@
         <div class="row">
           <div class="col-md-4 mb-4">
             <div class="feature-card">
-              <h3>Real-time Updates</h3>
+              <i class="fas fa-sync-alt feature-icon"
+                ><h3>Real-time Updates</h3></i
+              >
+
               <p>
                 Get the latest weather information updated in real-time for
                 accurate forecasting
@@ -152,7 +159,10 @@
           </div>
           <div class="col-md-4 mb-4">
             <div class="feature-card">
-              <h3>Interactive Maps</h3>
+              <i class="fas fa-map-marked-alt feature-icon"
+                ><h3>Interactive Maps</h3></i
+              >
+
               <p>
                 Visualize weather patterns with our interactive mapping system
               </p>
@@ -160,7 +170,10 @@
           </div>
           <div class="col-md-4 mb-4">
             <div class="feature-card">
-              <h3>Detailed Reports</h3>
+              <i class="fas fa-file-alt feature-icon">
+                <h3>Detailed Reports</h3></i
+              >
+
               <p>
                 Access comprehensive weather reports including temperature,
                 humidity, and wind speed
@@ -276,7 +289,6 @@
       </div>
     </section>
 
-    <!-- About Us Section -->
     <section class="about-section" id="about">
       <div class="about-pattern"></div>
       <div class="container">
@@ -293,21 +305,31 @@
           <div class="col-md-6">
             <div class="about-content">
               <h2 class="about-title">Tentang InfoCuaca</h2>
-              <p class="about-text">
-                InfoCuaca hadir sebagai solusi inovatif untuk memberikan
-                informasi cuaca yang akurat dan mudah diakses bagi seluruh
-                masyarakat Indonesia. Didirikan pada tahun 2020, kami
-                berkomitmen untuk menjadi partner terpercaya Anda dalam
-                merencanakan aktivitas sehari-hari.
-              </p>
-              <p class="about-text">
-                Dengan menggabungkan teknologi terkini dan data dari ribuan
-                stasiun cuaca di seluruh dunia, kami menghadirkan prediksi cuaca
-                yang presisi dan dapat diandalkan. Tim ahli kami terdiri dari
-                meteorolog berpengalaman dan pengembang teknologi yang
-                berdedikasi untuk memberikan pengalaman terbaik bagi pengguna.
-              </p>
-              <div class="row">
+              <div id="about-text-container">
+                <p class="about-text">
+                  InfoCuaca hadir sebagai solusi inovatif untuk memberikan
+                  informasi cuaca yang akurat dan mudah diakses bagi seluruh
+                  masyarakat Indonesia. Didirikan pada tahun 2020, kami
+                  berkomitmen untuk menjadi partner terpercaya Anda dalam
+                  merencanakan aktivitas sehari-hari.
+                </p>
+                <p
+                  class="about-text about-text-expandable"
+                  id="about-text-expandable"
+                >
+                  Dengan menggabungkan teknologi terkini dan data dari ribuan
+                  stasiun cuaca di seluruh dunia, kami menghadirkan prediksi
+                  cuaca yang presisi dan dapat diandalkan. Tim ahli kami terdiri
+                  dari meteorolog berpengalaman dan pengembang teknologi yang
+                  berdedikasi untuk memberikan pengalaman terbaik bagi pengguna.
+                </p>
+              </div>
+
+              <div class="read-more-btn" id="read-more-btn">
+                Baca Selengkapnya
+              </div>
+
+              <div class="row mt-3">
                 <div class="col-md-4">
                   <div class="stat-card">
                     <div class="stat-number">1 Juta+</div>
@@ -460,6 +482,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const readMoreBtn = document.getElementById("read-more-btn");
+        const aboutTextExpandable = document.getElementById(
+          "about-text-expandable"
+        );
+        let isExpanded = false;
+
+        readMoreBtn.addEventListener("click", function () {
+          if (!isExpanded) {
+            // Expand
+            aboutTextExpandable.classList.add("expanded");
+            readMoreBtn.textContent = "Tampilkan Lebih Sedikit";
+            isExpanded = true;
+          } else {
+            // Collapse
+            aboutTextExpandable.classList.remove("expanded");
+            readMoreBtn.textContent = "Baca Selengkapnya";
+            isExpanded = false;
+          }
+        });
+      });
+    </script>
 
     <script>
       let map;
